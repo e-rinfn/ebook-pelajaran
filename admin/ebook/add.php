@@ -12,12 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $deskripsi = $_POST['deskripsi'];
     $kategori_ids = $_POST['kategori_ids'] ?? [];
 
-    // Untuk Pengujian Lokalhost
-    $cover_path = __DIR__ . '../../uploads/covers/';
-    $file_path  = __DIR__ . '../../uploads/ebooks/';
+    // Upload cover
+    $cover_url = uploadFile($_FILES['cover'], '../../uploads/covers/');
 
-    $cover_url = uploadFile($_FILES['cover'], $cover_path);
-    $file_url  = uploadFile($_FILES['file'], $file_path);
+    // Upload file ebook
+    $file_url = uploadFile($_FILES['file'], '../../uploads/ebooks/');
 
     // Simpan ke database
     $stmt = $pdo->prepare("INSERT INTO ebook 
