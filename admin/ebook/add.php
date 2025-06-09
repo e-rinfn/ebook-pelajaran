@@ -12,11 +12,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $deskripsi = $_POST['deskripsi'];
     $kategori_ids = $_POST['kategori_ids'] ?? [];
 
-    // Upload cover
-    $cover_url = uploadFile($_FILES['cover'], $base_url . '/uploads/covers/');
+    // Untuk Pengujian Lokalhost
+    // $cover_path = __DIR__ . '/../../uploads/covers/';
+    // $file_path  = __DIR__ . '/../../uploads/ebooks/';
 
-    // Upload file ebook
-    $file_url = uploadFile($_FILES['file'], $base_url . '/uploads/ebooks/');
+    // $cover_url = uploadFile($_FILES['cover'], $cover_path);
+    // $file_url  = uploadFile($_FILES['file'], $file_path);
+
+    // Untuk Pengujian Server
+    $base_url = 'http://dsn.erinfn.my.id'; // ganti dengan domainmu atau gunakan base_url() jika pakai framework
+
+    $cover_url = $base_url . '/uploads/covers/' . $cover_name;
+    $file_url  = $base_url . '/uploads/ebooks/' . $file_name;
+
     // Simpan ke database
     $stmt = $pdo->prepare("INSERT INTO ebook 
                           (judul, penulis, tahun_terbit, deskripsi, cover_url, file_url, admin_id) 
