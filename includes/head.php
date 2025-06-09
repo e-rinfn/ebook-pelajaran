@@ -1,3 +1,8 @@
+<?php
+
+include_once __DIR__ . '/../config/config.php';
+
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 
