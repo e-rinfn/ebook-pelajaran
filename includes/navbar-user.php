@@ -2,7 +2,7 @@
 <div class="container">
     <div class="d-flex">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="/ebook/assets/images/Logo.png" alt="Logo" class="mr-2" style="height: 40px;">
+            <img src="<?= $base_url ?>/assets/images/Logo.png" alt="Logo" class="mr-2" style="height: 40px;">
             <span class="font-weight-bold text-dark">E-Book Buku Pelajaran</span>
         </a>
 

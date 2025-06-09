@@ -18,27 +18,27 @@ include_once __DIR__ . '/../config/config.php';
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <link rel="icon" href="/ebook/assets/images/Logo.png" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="/ebook/assets/images/Logo.png" />
+    <link rel="icon" href="<?= $base_url ?>/assets/images/Logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?= $base_url ?>/assets/images/Logo.png" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
     <title>E-Book Buku Pelajaran</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
-    <script src="/ebook/assets/js/require.min.js"></script>
+    <script src="<?= $base_url ?>/assets/js/require.min.js"></script>
     <script>
         requirejs.config({
             baseUrl: '.'
         });
     </script>
     <!-- Dashboard Core -->
-    <link href="/ebook/assets/css/dashboard.css" rel="stylesheet" />
-    <script src="/ebook/assets/js/dashboard.js"></script>
+    <link href="<?= $base_url ?>/assets/css/dashboard.css" rel="stylesheet" />
+    <script src="<?= $base_url ?>/assets/js/dashboard.js"></script>
     <!-- c3.js Charts Plugin -->
-    <link href="/ebook/assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
-    <script src="/ebook/assets/plugins/charts-c3/plugin.js"></script>
+    <link href="<?= $base_url ?>/assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="<?= $base_url ?>/assets/plugins/charts-c3/plugin.js"></script>
     <!-- Google Maps Plugin -->
-    <link href="/ebook/assets/plugins/maps-google/plugin.css" rel="stylesheet" />
-    <script src="/ebook/assets/plugins/maps-google/plugin.js"></script>
+    <link href="<?= $base_url ?>/assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="<?= $base_url ?>/assets/plugins/maps-google/plugin.js"></script>
     <!-- Input Mask Plugin -->
-    <script src="/ebook/assets/plugins/input-mask/plugin.js"></script>
+    <script src="<?= $base_url ?>/assets/plugins/input-mask/plugin.js"></script>
 </head>

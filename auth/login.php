@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="row shadow-lg rounded overflow-hidden" style="max-width: 900px; width: 100%;">
             <!-- Kolom Gambar -->
             <div class="col-md-6 d-none d-md-block p-0">
-                <img src="/ebook/assets/images/login-image.jpg" alt="Login Image" class="img-fluid h-100 w-100" style="object-fit: cover;">
+                <img src="<?= $base_url ?>/assets/images/login-image.jpg" alt="Login Image" class="img-fluid h-100 w-100" style="object-fit: cover;">
             </div>
 
             <!-- Kolom Form Login -->
