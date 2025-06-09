@@ -13,11 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $kategori_ids = $_POST['kategori_ids'] ?? [];
 
     // Upload cover
-    $cover_url = uploadFile($_FILES['cover'], '../../uploads/covers/');
+    $cover_url = uploadFile($_FILES['cover'], $base_url . '/uploads/covers/');
 
     // Upload file ebook
-    $file_url = uploadFile($_FILES['file'], '../../uploads/ebooks/');
-
+    $file_url = uploadFile($_FILES['file'], $base_url . '/uploads/ebooks/');
     // Simpan ke database
     $stmt = $pdo->prepare("INSERT INTO ebook 
                           (judul, penulis, tahun_terbit, deskripsi, cover_url, file_url, admin_id) 
