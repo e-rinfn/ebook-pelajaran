@@ -2,9 +2,13 @@
 <div class="container">
     <div class="d-flex">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="<?= $base_url ?>/assets/images/Logo.png" alt="Logo" class="mr-2" style="height: 40px;">
-            <span class="font-weight-bold text-dark">E-Book Buku Pelajaran</span>
+            <img src="<?= $base_url ?>/assets/images/Logo.png" alt="Logo" style="height: 50px; margin-right: 10px;">
+            <div class="d-flex flex-column">
+                <span class="font-weight-bold text-dark" style="line-height: 1.2;">E-BOOK SMP FULLDAY SCHOOL</span>
+                <span class="font-weight-bold text-dark" style="line-height: 1.2;">AL-MANSHURIYAH CIMANGGU</span>
+            </div>
         </a>
+
 
 
 

@@ -48,7 +48,7 @@ try {
   $filteredBooks = $stmt->fetchAll();
 
   // Tetap ambil 6 buku terbaru
-  $stmt = $db->query("SELECT * FROM ebook ORDER BY created_at DESC");
+  $stmt = $db->query("SELECT * FROM ebook ORDER BY created_at DESC LIMIT 6");
   $latestBooks = $stmt->fetchAll();
 } catch (PDOException $e) {
   $error = "Gagal memuat data: " . $e->getMessage();
@@ -159,7 +159,7 @@ try {
                       <div class="col-6 col-md-4 col-lg-3 mb-4">
                         <div class="card h-100 d-flex flex-column">
                           <?php if ($book['cover_url']): ?>
-                            <img src="<?= $base_url ?>/ebook/uploads/covers/<?= htmlspecialchars($book['cover_url']); ?>" class="card-img-top" alt="<?= htmlspecialchars($book['judul']); ?>">
+                            <img src="uploads/covers/<?= htmlspecialchars($book['cover_url']); ?>" class="card-img-top" alt="<?= htmlspecialchars($book['judul']); ?>">
                           <?php else: ?>
                             <img src="https://via.placeholder.com/150x200?text=No+Cover" class="card-img-top" alt="Cover tidak tersedia">
                           <?php endif; ?>
