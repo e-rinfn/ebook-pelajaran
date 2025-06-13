@@ -75,8 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- Kolom Form Login -->
             <div class="col-md-6 bg-white p-4">
-                <h1 class="text-center mb-4 text-primary">LOGIN</h1>
-                <p class="text-center mb-4">Masuk ke akun Anda untuk mengelola e-book.</p>
+                <div class="text-center mb-3">
+                    <img src="<?= $base_url ?>/assets/images/Logo.png" alt="Login Illustration" style="height: 100px;">
+                </div>
+                <h1 class="text-center font-weight-bold mb-3 text-dark">LOGIN</h1>
+                <p class="mb-4">Masuk ke akun Anda untuk mengelola e-book.</p>
 
                 <?php if (!empty($error)): ?>
                     <div class="alert alert-danger" role="alert"><?= $error ?></div>
