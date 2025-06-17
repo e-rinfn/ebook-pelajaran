@@ -167,11 +167,11 @@ try {
                           <div class="card-body d-flex flex-column">
                             <h5 class="card-title"><?= htmlspecialchars($book['judul']); ?></h5>
 
-                            <p class="card-text" id="desc-<?= $book['id']; ?>">
+                            <p class="card-text text-justify" id="desc-<?= $book['id']; ?>">
                               <?= nl2br(htmlspecialchars(mb_strimwidth($book['deskripsi'], 0, 150, '...'))) ?>
                               <a href="#" onclick="toggleDescription(<?= $book['id']; ?>); return false;"><br>Lihat Selengkapnya</a>
                             </p>
-                            <p class="card-text d-none" id="desc-full-<?= $book['id']; ?>">
+                            <p class="card-text text-justify d-none" id="desc-full-<?= $book['id']; ?>">
                               <?= nl2br(htmlspecialchars($book['deskripsi'])) ?>
                               <a href="#" onclick="toggleDescription(<?= $book['id']; ?>, false); return false;"><br>Tutup</a>
                             </p>
@@ -212,11 +212,11 @@ try {
                     <div class="card-body d-flex flex-column">
                       <h5 class="card-title"><?= htmlspecialchars($book['judul']); ?></h5>
 
-                      <p class="card-text" id="desc-<?= $book['id']; ?>">
+                      <p class="card-text text-justify" id="desc-<?= $book['id']; ?>">
                         <?= nl2br(htmlspecialchars(mb_strimwidth($book['deskripsi'], 0, 150, '...'))) ?>
                         <a href="#" onclick="toggleDescription(<?= $book['id']; ?>); return false;"><br>Lihat Selengkapnya</a>
                       </p>
-                      <p class="card-text d-none" id="desc-full-<?= $book['id']; ?>">
+                      <p class="card-text text-justify d-none" id="desc-full-<?= $book['id']; ?>">
                         <?= nl2br(htmlspecialchars($book['deskripsi'])) ?>
                         <a href="#" onclick="toggleDescription(<?= $book['id']; ?>, false); return false;"><br>Tutup</a>
                       </p>
