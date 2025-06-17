@@ -165,7 +165,7 @@ try {
                           <?php endif; ?>
 
                           <div class="card-body d-flex flex-column">
-                            <h5 class="card-title"><?= htmlspecialchars($book['judul']); ?></h5>
+                            <h5 class="card-title font-weight-bold"><?= htmlspecialchars($book['judul']); ?></h5>
 
                             <p class="card-text text-justify" id="desc-<?= $book['id']; ?>">
                               <?= nl2br(htmlspecialchars(mb_strimwidth($book['deskripsi'], 0, 150, '...'))) ?>
@@ -210,7 +210,7 @@ try {
                       <img src="https://via.placeholder.com/150x200?text=No+Cover" class="card-img-top" alt="Cover tidak tersedia">
                     <?php endif; ?>
                     <div class="card-body d-flex flex-column">
-                      <h5 class="card-title"><?= htmlspecialchars($book['judul']); ?></h5>
+                      <h5 class="card-title font-weight-bold"><?= htmlspecialchars($book['judul']); ?></h5>
 
                       <p class="card-text text-justify" id="desc-<?= $book['id']; ?>">
                         <?= nl2br(htmlspecialchars(mb_strimwidth($book['deskripsi'], 0, 150, '...'))) ?>
