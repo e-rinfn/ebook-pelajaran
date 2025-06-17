@@ -48,7 +48,7 @@ try {
   $filteredBooks = $stmt->fetchAll();
 
   // Tetap ambil 6 buku terbaru
-  $stmt = $db->query("SELECT * FROM ebook ORDER BY created_at DESC LIMIT 6");
+  $stmt = $db->query("SELECT * FROM ebook ORDER BY created_at DESC");
   $latestBooks = $stmt->fetchAll();
 } catch (PDOException $e) {
   $error = "Gagal memuat data: " . $e->getMessage();
@@ -165,7 +165,17 @@ try {
                           <?php endif; ?>
 
                           <div class="card-body d-flex flex-column">
-                            <h5 class="card-title mb-1"><?= htmlspecialchars($book['judul']); ?></h5>
+                            <h5 class="card-title"><?= htmlspecialchars($book['judul']); ?></h5>
+
+                            <p class="card-text" id="desc-<?= $book['id']; ?>">
+                              <?= nl2br(htmlspecialchars(mb_strimwidth($book['deskripsi'], 0, 150, '...'))) ?>
+                              <a href="#" onclick="toggleDescription(<?= $book['id']; ?>); return false;"><br>Lihat Selengkapnya</a>
+                            </p>
+                            <p class="card-text d-none" id="desc-full-<?= $book['id']; ?>">
+                              <?= nl2br(htmlspecialchars($book['deskripsi'])) ?>
+                              <a href="#" onclick="toggleDescription(<?= $book['id']; ?>, false); return false;"><br>Tutup</a>
+                            </p>
+
                             <p class="card-text mb-1">Oleh: <?= htmlspecialchars($book['penulis']); ?></p>
                             <p class="card-text mb-3"><small class="text-muted">Tahun: <?= htmlspecialchars($book['tahun_terbit']); ?></small></p>
 
@@ -173,6 +183,7 @@ try {
                               <a href="uploads/ebooks/<?= htmlspecialchars($book['file_url']); ?>" target="_blank" class="btn btn-sm btn-primary btn-block">Baca E-Book</a>
                             </div>
                           </div>
+
                         </div>
                       </div>
 
@@ -198,16 +209,46 @@ try {
                     <?php else: ?>
                       <img src="https://via.placeholder.com/150x200?text=No+Cover" class="card-img-top" alt="Cover tidak tersedia">
                     <?php endif; ?>
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                       <h5 class="card-title"><?= htmlspecialchars($book['judul']); ?></h5>
-                      <p class="card-text">Oleh: <?= htmlspecialchars($book['penulis']); ?></p>
-                      <p class="card-text"><small class="text-muted">Tahun: <?= htmlspecialchars($book['tahun_terbit']); ?></small></p>
-                      <a href="uploads/ebooks/<?= htmlspecialchars($book['file_url']); ?>" target="_blank" class="btn btn-sm btn-primary">Baca E-Book</a>
+
+                      <p class="card-text" id="desc-<?= $book['id']; ?>">
+                        <?= nl2br(htmlspecialchars(mb_strimwidth($book['deskripsi'], 0, 150, '...'))) ?>
+                        <a href="#" onclick="toggleDescription(<?= $book['id']; ?>); return false;"><br>Lihat Selengkapnya</a>
+                      </p>
+                      <p class="card-text d-none" id="desc-full-<?= $book['id']; ?>">
+                        <?= nl2br(htmlspecialchars($book['deskripsi'])) ?>
+                        <a href="#" onclick="toggleDescription(<?= $book['id']; ?>, false); return false;"><br>Tutup</a>
+                      </p>
+
+                      <p class="card-text mb-1">Oleh: <?= htmlspecialchars($book['penulis']); ?></p>
+                      <p class="card-text mb-3"><small class="text-muted">Tahun: <?= htmlspecialchars($book['tahun_terbit']); ?></small></p>
+
+                      <div class="mt-auto">
+                        <a href="uploads/ebooks/<?= htmlspecialchars($book['file_url']); ?>" target="_blank" class="btn btn-sm btn-primary btn-block">Baca E-Book</a>
+                      </div>
                     </div>
                   </div>
                 </div>
               <?php endforeach; ?>
             </div>
+
+
+            <script>
+              function toggleDescription(id, expand = true) {
+                const shortDesc = document.getElementById(`desc-${id}`);
+                const fullDesc = document.getElementById(`desc-full-${id}`);
+
+                if (expand) {
+                  shortDesc.classList.add('d-none');
+                  fullDesc.classList.remove('d-none');
+                } else {
+                  shortDesc.classList.remove('d-none');
+                  fullDesc.classList.add('d-none');
+                }
+              }
+            </script>
+
 
             <!-- Daftar Kategori -->
             <h2 class="mt-5 mb-3">Kategori Buku</h2>
