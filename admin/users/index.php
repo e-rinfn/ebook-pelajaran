@@ -50,7 +50,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         <?php if (isset($_GET['success'])): ?>
                             <div class="alert alert-success">
-                                E-Book berhasil <?= $_GET['success'] === 'add' ? 'ditambahkan' : 'diperbarui' ?>!
+                                Pengguna berhasil <?= $_GET['success'] === 'add' ? 'ditambahkan' : 'diperbarui' ?>!
                             </div>
                         <?php endif; ?>
 
