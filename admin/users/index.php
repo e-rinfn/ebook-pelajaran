@@ -54,6 +54,11 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         <?php endif; ?>
 
+                        <?php if (isset($_SESSION['error'])): ?>
+                            <div class="alert alert-danger"><?= $_SESSION['error'] ?></div>
+                            <?php unset($_SESSION['error']); ?>
+                        <?php endif; ?>
+
                         <div class="row row-cards row-deck">
                             <div class="col-12">
                                 <div class="card">

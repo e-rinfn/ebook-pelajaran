@@ -62,6 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div class="card">
                             <div class="card-body">
+                                <?php if (isset($_GET['success'])): ?>
+                                    <div class="alert alert-success">
+                                        E-Book berhasil <?= $_GET['success'] === 'add' ? 'ditambahkan' : 'diperbarui' ?>!
+                                    </div>
+                                <?php endif; ?>
+
                                 <?php if (isset($_SESSION['error'])): ?>
                                     <div class="alert alert-danger"><?= $_SESSION['error'] ?></div>
                                     <?php unset($_SESSION['error']); ?>
