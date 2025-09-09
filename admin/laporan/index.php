@@ -160,7 +160,7 @@ $ebooks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                     foreach ($ebooks as $ebook): ?>
                                                         <tr>
                                                             <td class="text-center"><?= $no++ ?></td>
-                                                            <td>
+                                                            <td class="text-center">
                                                                 <?php if ($ebook['cover_url']): ?>
                                                                     <a href="../../uploads/covers/<?= htmlspecialchars($ebook['cover_url']) ?>" target="_blank" rel="noopener noreferrer">
                                                                         <img src="../../uploads/covers/<?= htmlspecialchars($ebook['cover_url']) ?>" alt="Cover" width="50" class="img-thumbnail">
