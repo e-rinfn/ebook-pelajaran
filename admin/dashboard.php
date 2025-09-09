@@ -26,7 +26,7 @@ $latestEbooks = $pdo->query("SELECT * FROM ebook ORDER BY created_at DESC LIMIT 
                     <div class="container">
                         <div class="page-header">
                             <h1 class="page-title">
-                                JUDUL HALAMAN
+                                DASHBOARD
                             </h1>
                         </div>
 

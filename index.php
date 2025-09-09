@@ -82,15 +82,37 @@ try {
                 <form method="get" action="">
 
 
-                  <div class="col-md-4 m-0">
-                    <!-- Tombol untuk membuka modal filter -->
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#filterModal">
-                      <i class="fe fe-filter mr-2"></i>Filter dan Search
-                    </button>
-                    <?php if (!empty($searchQuery) || !empty($categoryFilters)): ?>
-                      <a href="?" class="btn btn-outline-secondary ml-2">Reset</a>
-                    <?php endif; ?>
+                  <div class="col-md-12">
+                    <div class="row align-items-center">
+                      <!-- Tombol Filter -->
+                      <div class="col-md-3 mb-2">
+                        <button type="button" class="btn btn-outline-primary w-100" data-toggle="modal" data-target="#filterModal">
+                          <i class="fe fe-filter mr-2"></i>Filter
+                        </button>
+                      </div>
+
+                      <!-- Input Cari Buku + Tombol Cari -->
+                      <div class="col-md-7 mb-2">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="searchModal" name="search"
+                            placeholder="Judul, penulis, atau deskripsi..."
+                            value="<?= htmlspecialchars($searchQuery) ?>">
+                          <button class="btn btn-primary rounded-0" type="submit">
+                            <i class="fe fe-search"></i> Cari
+                          </button>
+                        </div>
+                      </div>
+
+
+                      <!-- Tombol Reset -->
+                      <div class="col-md-2 mb-2">
+                        <?php if (!empty($searchQuery) || !empty($categoryFilters)): ?>
+                          <a href="?" class="btn btn-outline-secondary w-100">Reset</a>
+                        <?php endif; ?>
+                      </div>
+                    </div>
                   </div>
+
 
 
                   <!-- Modal Filter -->
@@ -106,11 +128,7 @@ try {
                         <div class="modal-body">
                           <div class="container-fluid">
                             <div class="row">
-                              <div class="col-12 mb-4">
-                                <label for="searchModal" class="form-label">Cari Buku</label>
-                                <input type="text" class="form-control" id="searchModal" name="search"
-                                  placeholder="Judul, penulis, atau deskripsi..." value="<?= htmlspecialchars($searchQuery) ?>">
-                              </div>
+
 
                               <div class="col-12">
                                 <label class="form-label d-block mb-3">Filter Kategori</label>
@@ -148,7 +166,7 @@ try {
             <!-- Hasil Pencarian -->
             <?php if (!empty($searchQuery) || !empty($categoryFilters)): ?>
               <div class="mb-4">
-                <h3>Hasil Pencarian</h3>
+                <h3>Hasil Filter dan Pencarian</h3>
                 <?php if (empty($filteredBooks)): ?>
                   <div class="alert alert-info">
                     Tidak ditemukan buku yang sesuai dengan kriteria pencarian.
@@ -194,10 +212,10 @@ try {
                 <?php endif; ?>
               </div>
             <?php endif; ?>
-
+            <hr>
             <!-- E-Book Terbaru -->
             <h3 class="mt-4">
-              E-Book Terbaru
+              Daftar E-Book Pelajaran
             </h3>
 
             <div class="row">

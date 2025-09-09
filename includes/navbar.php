@@ -41,6 +41,12 @@ $current_dir = basename(dirname($_SERVER['PHP_SELF']));
                             <i class="fe fe-loader"></i> Kategori
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="<?= $base_url ?>/admin/laporan/index.php"
+                            class="nav-link <?= ($current_dir == 'laporan') ? 'active' : '' ?>">
+                            <i class="fe fe-clipboard"></i> Laporan
+                        </a>
+                    </li>
 
                     <?php if ($_SESSION['admin_role'] === 'super_admin'): ?>
                         <li class="nav-item">
